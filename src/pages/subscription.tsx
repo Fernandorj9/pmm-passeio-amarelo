@@ -6,62 +6,22 @@ import { MainHero } from "../components/parts/MainHero";
 import { Section } from "../components/Section";
 import { theme } from "../styles/theme";
 import Router from 'next/router'
+import { Header } from "../components/Header";
 
 export default function SubscriptionPage() {
   const toast = useToast()
 
   const [isChecked, setIsChecked] = useState(false);
 
-  function handleChecked() {
-    setIsChecked(!isChecked);
-  }
-
-  function handleContinue() {
-    if (isChecked) {
-      Router.push('/subscription')
-    } else {
-      toast({
-        title: "Aceitar regulamento",
-        description: "Você precisa aceitar o regulamento para continuar",
-        isClosable: true,
-        position: "top",
-        status: "info"
-      })
-    }
-  }
   return (
     <Flex
       w="100%"
       direction="column"
     >
-      <Flex
-        as="header"
-        w="100%"
-        h="20"
-        bgColor="brand.black"
-        position="relative"
-      >
-        <Container
-          maxW="8xl"
-        >
-
-          <Image
-            src="/assets/logo-prefeitura.png"
-            w="xs"
-            width="600"
-            height="258"
-
-            position="absolute"
-            bottom="-20"
-
-            zIndex="2"
-          />
-
-        </Container>
-      </Flex>
+      <Header pageName="Formulário de inscrição | Passeio ciclístico Maio Amarelo 2022" />
 
       {/* principal */}
-      <MainHero>
+      <MainHero h="md">
 
       </MainHero>
       <Section

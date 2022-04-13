@@ -1,23 +1,25 @@
-import { Container, Flex, Heading } from "@chakra-ui/react";
+import { Container, Flex, FlexProps, Heading } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { ButtonLink } from "../ButtonLink";
 import { Image } from "../Image";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode,
+} & FlexProps;
 
-export function MainHero({ children }: Props) {
+export function MainHero({ children, ...rest }: Props) {
   return (
     <Flex
       as="main"
       id="principal-section"
       w="100%"
       h={["90vh", "90vh", "md"]}
+      minH={["90vh", "md", "100%"]}
       bgColor="brand.yellow"
       position="relative"
       align="center"
       justify="center"
+      {...rest}
     >
       <Container
         w="100%"

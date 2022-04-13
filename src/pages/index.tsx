@@ -1,9 +1,10 @@
-import { Button, Container, Divider, Flex, Heading, Icon, Text, useBreakpointValue } from '@chakra-ui/react'
+import { Divider, Flex, Heading, Icon, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Image } from '../components/Image'
 import { MdWatchLater } from 'react-icons/md'
 import { MainHero } from '../components/parts/MainHero'
 import { Section } from '../components/Section'
 import { ButtonLink } from '../components/ButtonLink'
+import { Header } from '../components/Header'
 
 export default function Home() {
   const isMobileVersion = useBreakpointValue({
@@ -16,34 +17,7 @@ export default function Home() {
       w="100%"
       direction="column"
     >
-      <Flex
-        as="header"
-        w="100%"
-        h="20"
-        bgColor="brand.black"
-        position="relative"
-      >
-        <Container
-          maxW="8xl"
-        >
-
-          <Image
-            src="/assets/logo-prefeitura.png"
-            w={["40", "xs"]}
-            width="600"
-            height="258"
-
-            position="absolute"
-            bottom={["0", "-20"]}
-            left={["50%", "50%", "auto",]}
-
-            transform={["translate(-50%, 0%)", "translate(-50%, 0%)", "translate(0%, 0%)"]}
-
-            zIndex="10"
-          />
-
-        </Container>
-      </Flex>
+      <Header pageName="Passeio ciclístico Maio Amarelo 2022" />
 
       {/* principal */}
       <MainHero>
@@ -154,6 +128,7 @@ export default function Home() {
           >
             <Image
               src="/assets/icons/doacao-icone.png"
+              alt="Figura monocromática em preto de duas mãos e uma cesta de alimentos representando a doação de alimentos."
               w="36"
               width="400"
               height="400"
@@ -196,6 +171,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/icons/medalha-icone.png"
+                alt="Figura monocromática em preto de uma medalha com uma estrela desenhada no centro."
                 w="36"
                 width="400"
                 height="400"
@@ -221,6 +197,7 @@ export default function Home() {
             >
               <Image
                 src="/assets/icons/camisa-icone.png"
+                alt="Figura monocromática em preto do contorno de uma camisa."
                 w="36"
                 width="242"
                 height="243"
@@ -256,6 +233,7 @@ export default function Home() {
         >
           <Image
             src="/assets/icons/percurso-icone.png"
+            alt="Figura monocromática em preto de dois alfinetes de mapa e uma linha pontilhada simbolizando um percurso."
             maxW="lg"
             width="400"
             height="400"
@@ -327,6 +305,7 @@ export default function Home() {
           >
             <Image
               src="/assets/icons/ciclista-icone.png"
+              alt="Figura monocromática em amarelo de uma bicicleta e um ciclista em cima dela."
               w="60"
               width="500"
               height="443"

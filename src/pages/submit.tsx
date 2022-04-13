@@ -6,6 +6,7 @@ import { MainHero } from "../components/parts/MainHero";
 import { Section } from "../components/Section";
 import { theme } from "../styles/theme";
 import Router from 'next/router'
+import { Header } from "../components/Header";
 
 export default function SubmitPage() {
   const toast = useToast()
@@ -34,34 +35,12 @@ export default function SubmitPage() {
       w="100%"
       direction="column"
     >
-      <Flex
-        as="header"
-        w="100%"
-        h="20"
-        bgColor="brand.black"
-        position="relative"
-      >
-        <Container
-          maxW="8xl"
-        >
-
-          <Image
-            src="/assets/logo-prefeitura.png"
-            w="xs"
-            width="600"
-            height="258"
-
-            position="absolute"
-            bottom="-20"
-
-            zIndex="2"
-          />
-
-        </Container>
-      </Flex>
+      <Header pageName="Inscrição | Passeio ciclístico Maio Amarelo 2022" />
 
       {/* principal */}
-      <MainHero>
+      <MainHero
+        h={["md"]}
+      >
         <Text
           pos="absolute"
           bottom="0"
@@ -69,19 +48,18 @@ export default function SubmitPage() {
 
           fontFamily="heading"
           fontWeight="black"
-          fontSize="4xl"
+          fontSize={["lg", "2xl", "4xl"]}
           textTransform="uppercase"
 
           bgColor="white"
 
-          w="lg"
+          w={["sm", "md", "lg"]}
           textAlign="center"
-          px="8"
+          px={["6", "8", "8"]}
           py="6"
 
           boxShadow="0px 0px 10px 10px rgba(0,0,0,0.05)"
 
-          size="lg"
           rounded="full"
           transform="translate(-50%, 50%)"
           zIndex="2"
@@ -119,7 +97,7 @@ export default function SubmitPage() {
             />
             <Text
               color="black"
-              fontSize="4xl"
+              fontSize={["sm", "sm", "4xl"]}
               textTransform="uppercase"
               fontFamily="heading"
               fontWeight="black"
@@ -133,7 +111,7 @@ export default function SubmitPage() {
 
             fontFamily="heading"
             fontWeight="black"
-            fontSize="4xl"
+            fontSize={["md", "md", "4xl"]}
             textTransform="uppercase"
 
             rounded="full"
