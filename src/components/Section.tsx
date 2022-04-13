@@ -5,11 +5,12 @@ export function Section({ children, ...rest }: FlexProps) {
     <Flex
       as="section"
       w="100%"
-      h="xl"
+      h={["max-content", "max-content", "xl"]}
+      minH={["100vh", "100vh", "xl"]}
 
       py="28"
 
-      direction="column"
+      direction={["row", "row", "row", "column"]}
 
       position="relative"
       overflow="hidden"

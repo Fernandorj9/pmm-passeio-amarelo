@@ -1,4 +1,4 @@
-import { Button, Container, Divider, Flex, Heading, Icon, Text } from '@chakra-ui/react'
+import { Button, Container, Divider, Flex, Heading, Icon, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Image } from '../components/Image'
 import { MdWatchLater } from 'react-icons/md'
 import { MainHero } from '../components/parts/MainHero'
@@ -6,6 +6,11 @@ import { Section } from '../components/Section'
 import { ButtonLink } from '../components/ButtonLink'
 
 export default function Home() {
+  const isMobileVersion = useBreakpointValue({
+    base: true,
+    md: false,
+  })
+
   return (
     <Flex
       w="100%"
@@ -24,14 +29,17 @@ export default function Home() {
 
           <Image
             src="/assets/logo-prefeitura.png"
-            w="xs"
+            w={["40", "xs"]}
             width="600"
             height="258"
 
             position="absolute"
-            bottom="-20"
+            bottom={["0", "-20"]}
+            left={["50%", "50%", "auto",]}
 
-            zIndex="2"
+            transform={["translate(-50%, 0%)", "translate(-50%, 0%)", "translate(0%, 0%)"]}
+
+            zIndex="10"
           />
 
         </Container>
@@ -42,6 +50,8 @@ export default function Home() {
         <Heading
           fontWeight="black"
           textTransform="uppercase"
+
+          zIndex="2"
         >
           Inscrições de <br />18 a 27 de abril
         </Heading>
@@ -49,17 +59,18 @@ export default function Home() {
           href="/submit"
           pos="absolute"
           transform="translate(-50%, 50%)"
-          bottom="0"
+          bottom={["12", "12", "0", "0",]}
           left="50%"
 
           size="lg"
 
           fontFamily="heading"
           fontWeight="black"
-          fontSize="4xl"
+          fontSize={["lg", "2xl", "4xl"]}
           textTransform="uppercase"
+          boxShadow="0px 0px 10px 10px rgba(0,0,0,0.05)"
 
-          px="8"
+          px={["8"]}
           py="10"
 
           zIndex="2"
@@ -77,8 +88,8 @@ export default function Home() {
         overflow="hidden"
         backgroundImage="/assets/camisa-maio-amarelo.png"
         backgroundRepeat="no-repeat"
-        backgroundSize="1400px"
-        backgroundPosition={["right -860px bottom -200px",]}
+        backgroundSize={["800px", "950px", "950px", "1400px"]}
+        backgroundPosition={["right -600px bottom -50px", "right -700px bottom -50px", "right -700px bottom -50px", "right -860px bottom -200px",]}
       >
         <Heading
           color="brand.yellow"
@@ -130,14 +141,16 @@ export default function Home() {
       >
         <Flex
           align="center"
-          justify="space-between"
+          direction={["column", "column", "row", "row"]}
+          justify="space-around"
           h="100%"
-          gridGap="10"
-          flexGrow={1}
+          gridGap={["4", "4", "4", "10"]}
         >
           <Flex
             align="center"
             justify="center"
+            direction={["column", "column", "column", "column", "row", "row"]}
+            w={["lg", "lg", "xl", "4xl"]}
           >
             <Image
               src="/assets/icons/doacao-icone.png"
@@ -148,19 +161,20 @@ export default function Home() {
             />
             <Flex
               direction="column"
-              fontSize="5xl"
+              fontSize={["4xl", "4xl", "4xl", "4xl", "5xl"]}
               fontWeight="extrabold"
               textTransform="uppercase"
               fontFamily="heading"
               justify="center"
+              align={["center", "center", "center", "center", "flex-start"]}
             >
-              <Text fontSize="7xl" mb="-10">1KG</Text>
+              <Text fontSize={["4xl", "4xl", "4xl", "5xl", "7xl"]} mb={["-6", "-6", "-6", "-8", "-10"]}>1KG</Text>
               <Text>DE ALIMENTO</Text>
             </Flex>
           </Flex>
 
           <Text
-            fontSize="9xl"
+            fontSize={["6xl", "6xl", "6xl", "6xl", "9xl"]}
             fontWeight="extrabold"
             textTransform="uppercase"
             fontFamily="heading"
@@ -169,7 +183,7 @@ export default function Home() {
           </Text>
 
           <Flex
-            align="flex-start"
+            align={["center", "center", "flex-start", "flex-start"]}
             justify="center"
             direction="column"
             gridGap="4"
@@ -178,6 +192,7 @@ export default function Home() {
               align="center"
               justify="center"
               gridGap="8"
+              flexDirection={["column", "column", "column", "row"]}
             >
               <Image
                 src="/assets/icons/medalha-icone.png"
@@ -186,7 +201,9 @@ export default function Home() {
                 height="400"
               />
               <Text
-                fontSize="4xl"
+                fontSize={["2xl", "2xl", "2xl", "4xl"]}
+                w={["xs", "auto", "md", "md", "md"]}
+                textAlign={["center", "center", "center", "left"]}
                 fontWeight="extrabold"
                 textTransform="uppercase"
                 fontFamily="heading"
@@ -200,19 +217,21 @@ export default function Home() {
               align="center"
               justify="center"
               gridGap="8"
+              flexDirection={["column", "column", "column", "row"]}
             >
               <Image
                 src="/assets/icons/camisa-icone.png"
                 w="36"
-                width="400"
-                height="400"
+                width="242"
+                height="243"
               />
               <Text
-                fontSize="4xl"
+                fontSize={["2xl", "2xl", "2xl", "4xl"]}
+                w={["xs", "auto", "md", "md", "md"]}
+                textAlign={["center", "center", "center", "left"]}
                 fontWeight="extrabold"
                 textTransform="uppercase"
                 fontFamily="heading"
-                w="lg"
                 lineHeight="36px"
               >
                 camisa do passeio maio amarelo 2022
@@ -220,7 +239,7 @@ export default function Home() {
             </Flex>
           </Flex>
         </Flex>
-      </Section>
+      </Section >
 
       {/* percurso */}
       <Section
@@ -232,30 +251,38 @@ export default function Home() {
           align="center"
           justify="space-between"
           gridGap="10"
+
+          flexDirection={["column", "column", "row"]}
         >
           <Image
             src="/assets/icons/percurso-icone.png"
-            w="lg"
+            maxW="lg"
             width="400"
             height="400"
           />
 
-          <Divider
-            orientation="vertical"
-            borderWidth="4px"
-            borderColor="brand.black"
-            opacity="1"
-            mx="2"
-          />
+          {isMobileVersion
+            ? <Divider
+              orientation={"horizontal"}
+              borderWidth="4px"
+              borderColor="brand.black"
+              opacity="1"
+              mx="2"
+            />
+            : <Divider
+              orientation={"vertical"}
+              borderWidth="4px"
+              borderColor="brand.black"
+              opacity="1"
+              mx="2"
+            />}
 
           <Flex
             direction="column"
-
-
             maxW="lg"
           >
             <Text
-              fontSize="7xl"
+              fontSize={["5xl", "7xl", "5xl", "6xl", "7xl"]}
               fontWeight="extrabold"
               textTransform="uppercase"
               fontFamily="heading"
@@ -263,7 +290,7 @@ export default function Home() {
               PERCURSO
             </Text>
             <Text
-              fontSize="6xl"
+              fontSize={["4xl", "7xl", "5xl", "6xl", "7xl"]}
               fontWeight="extrabold"
               textTransform="uppercase"
               fontFamily="heading"
@@ -272,12 +299,12 @@ export default function Home() {
             </Text>
             <Text
               fontSize="2xl"
-              w="lg"
+              maxW="lg"
             >
               Contemplando espaços públicos e unidades dos principais parceiros do projeto.</Text>
           </Flex>
         </Flex>
-      </Section>
+      </Section >
 
       <Section
         id="proposta-section"
@@ -291,6 +318,7 @@ export default function Home() {
           gridGap="10"
           h="100%"
           flexGrow={1}
+          flexDirection={["column", "column", "row"]}
         >
           <Flex
             align="center"
@@ -310,17 +338,26 @@ export default function Home() {
               textTransform="uppercase"
               fontFamily="heading"
             >
-              PERCURSO
+              PROPOSTA
             </Text>
           </Flex>
 
-          <Divider
-            orientation="vertical"
-            borderWidth="4px"
-            borderColor="white"
-            opacity="1"
-            mx="2"
-          />
+          {isMobileVersion
+            ? <Divider
+              orientation="horizontal"
+              borderWidth="4px"
+              borderColor="white"
+              opacity="1"
+              mx="2"
+            />
+            : <Divider
+              orientation="vertical"
+              borderWidth="4px"
+              borderColor="white"
+              opacity="1"
+              mx="2"
+            />}
+
 
           <Flex
             direction="column"
@@ -340,6 +377,6 @@ export default function Home() {
         </Flex>
       </Section>
 
-    </Flex>
+    </Flex >
   )
 }
