@@ -39,13 +39,8 @@ export function CyclistFormFields() {
       birthDate: values.birthDate,
     }
 
-    console.log(newCyclist)
-
     try {
-      // await createCyclist(newCyclist);
-      const response = await axios.post('https://passeiociclistico.getranmossoro.com.br/api/saveCadastro', newCyclist)
-
-      console.log(response.data)
+      await createCyclist(newCyclist);
 
       toast({
         title: "Sucesso",

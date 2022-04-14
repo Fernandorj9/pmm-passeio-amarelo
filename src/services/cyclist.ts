@@ -96,12 +96,7 @@ export const createCyclist = async (cyclist: Cyclist): Promise<Cyclist> => {
 
   delete dbCyclist.id
 
-  const response: AxiosResponse<DbCyclist> = await axios.post<DbCyclist>('https://passeiociclistico.getranmossoro.com.br/api/saveCadastro', createCyclistForm, {
-    headers: {
-      Accept: "application/json",
-      "x-requested-with": "XmlHttpRequest",
-    },
-  })
+  const response: AxiosResponse<DbCyclist> = await api.post<DbCyclist>('/saveCadastro', dbCyclist)
 
   newCyclist = dbToModel(response.data)
 
