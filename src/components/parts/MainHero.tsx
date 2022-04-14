@@ -37,6 +37,7 @@ export function MainHero({ children, ...rest }: Props) {
 
         <Image
           src="/assets/banner-simbolo-maio-amarelo.webp"
+          alt="símbolo maio amarelo"
           w="975px"
           h="500px"
           width="975"
