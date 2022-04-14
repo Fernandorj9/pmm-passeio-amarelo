@@ -24,7 +24,7 @@ export function Header({ pageName }: Props) {
       >
 
         <Image
-          src="/assets/logo-prefeitura.png"
+          src="/assets/logo-prefeitura.webp"
           alt="logo da prefeitura municipal de mossoró em conjunto com a Secretaria Municipal de Segurança Pública, Defesa Civil, Mobilidade Urbana e Trânsito (SESDEM)"
           w={["40", "xs"]}
           width="600"
