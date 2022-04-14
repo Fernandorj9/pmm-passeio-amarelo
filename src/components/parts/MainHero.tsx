@@ -36,7 +36,7 @@ export function MainHero({ children, ...rest }: Props) {
         {children}
 
         <Image
-          src="/assets/banner-simbolo-maio-amarelo.png"
+          src="/assets/banner-simbolo-maio-amarelo.webp"
           w="975px"
           h="500px"
           width="975"
@@ -47,7 +47,7 @@ export function MainHero({ children, ...rest }: Props) {
         />
 
         <Image
-          src="/assets/logo-passeio-ciclistico.png"
+          src="/assets/logo-passeio-ciclistico.webp"
           w="auto"
           maxW={["sm", "sm", "xs", "max-content"]}
           maxH={["48", "max-content", "max-content", "max-content"]}

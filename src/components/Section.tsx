@@ -5,7 +5,7 @@ export function Section({ children, ...rest }: FlexProps) {
     <Flex
       as="section"
       w="100%"
-      h={["max-content", "max-content", "xl"]}
+      h={["max-content", "max-content", "max-content"]}
       minH={["100vh", "100vh", "xl"]}
 
       py="28"

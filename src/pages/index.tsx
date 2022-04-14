@@ -1,10 +1,10 @@
 import { Divider, Flex, Heading, Icon, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Image } from '../components/Image'
 import { MdWatchLater } from 'react-icons/md'
-import { MainHero } from '../components/parts/MainHero'
 import { Section } from '../components/Section'
 import { ButtonLink } from '../components/ButtonLink'
 import { Header } from '../components/Header'
+import { MainHero } from '../components/parts/MainHero'
 
 export default function Home() {
   const isMobileVersion = useBreakpointValue({
@@ -60,10 +60,10 @@ export default function Home() {
         backgroundColor="brand.black"
         position="relative"
         overflow="hidden"
-        backgroundImage="/assets/camisa-maio-amarelo.png"
+        backgroundImage="/assets/camisa-maio-amarelo.webp"
         backgroundRepeat="no-repeat"
-        backgroundSize={["800px", "950px", "950px", "1400px"]}
-        backgroundPosition={["right -600px bottom -50px", "right -700px bottom -50px", "right -700px bottom -50px", "right -860px bottom -200px",]}
+        backgroundSize={["800px", "950px", "950px", "600px"]}
+        backgroundPosition={["right -600px bottom -50px", "right -700px bottom -50px", "right -700px bottom -50px", "right -200px bottom -100px",]}
       >
         <Heading
           color="brand.yellow"
@@ -95,7 +95,7 @@ export default function Home() {
           localizado na Avenida Rio Branco, centro da cidade.
         </Text>
         {/* <Image
-          src="/assets/camisa-maio-amarelo.png"
+          src="/assets/camisa-maio-amarelo.webp"
           w="auto"
           h="xl"
           width={`${1459 * 0.8}`}
@@ -127,7 +127,7 @@ export default function Home() {
             w={["lg", "lg", "xl", "4xl"]}
           >
             <Image
-              src="/assets/icons/doacao-icone.png"
+              src="/assets/icons/doacao-icone.webp"
               alt="Figura monocromática em preto de duas mãos e uma cesta de alimentos representando a doação de alimentos."
               w="36"
               width="400"
@@ -170,7 +170,7 @@ export default function Home() {
               flexDirection={["column", "column", "column", "row"]}
             >
               <Image
-                src="/assets/icons/medalha-icone.png"
+                src="/assets/icons/medalha-icone.webp"
                 alt="Figura monocromática em preto de uma medalha com uma estrela desenhada no centro."
                 w="36"
                 width="400"
@@ -196,7 +196,7 @@ export default function Home() {
               flexDirection={["column", "column", "column", "row"]}
             >
               <Image
-                src="/assets/icons/camisa-icone.png"
+                src="/assets/icons/camisa-icone.webp"
                 alt="Figura monocromática em preto do contorno de uma camisa."
                 w="36"
                 width="242"
@@ -232,7 +232,7 @@ export default function Home() {
           flexDirection={["column", "column", "row"]}
         >
           <Image
-            src="/assets/icons/percurso-icone.png"
+            src="/assets/icons/percurso-icone.webp"
             alt="Figura monocromática em preto de dois alfinetes de mapa e uma linha pontilhada simbolizando um percurso."
             maxW="lg"
             width="400"
@@ -249,6 +249,7 @@ export default function Home() {
             />
             : <Divider
               orientation={"vertical"}
+              h="300px"
               borderWidth="4px"
               borderColor="brand.black"
               opacity="1"
@@ -304,7 +305,7 @@ export default function Home() {
             gridGap="4"
           >
             <Image
-              src="/assets/icons/ciclista-icone.png"
+              src="/assets/icons/ciclista-icone.webp"
               alt="Figura monocromática em amarelo de uma bicicleta e um ciclista em cima dela."
               w="60"
               width="500"
@@ -312,7 +313,7 @@ export default function Home() {
             />
 
             <Text
-              fontSize="7xl"
+              fontSize={["5xl", "5xl", "7xl"]}
               fontWeight="extrabold"
               textTransform="uppercase"
               fontFamily="heading"
@@ -331,6 +332,7 @@ export default function Home() {
             />
             : <Divider
               orientation="vertical"
+              h="300px"
               borderWidth="4px"
               borderColor="white"
               opacity="1"

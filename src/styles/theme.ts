@@ -10,6 +10,7 @@ const config: ThemeConfig = {
 const colors = {
   brand: {
     yellow: "#FCE321",
+    green: "#00A550",
     black: "#000000"
   },
 }
