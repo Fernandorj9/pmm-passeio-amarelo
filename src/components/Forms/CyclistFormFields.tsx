@@ -251,7 +251,7 @@ export function CyclistFormFields() {
         color="white"
         colorScheme="green"
 
-        w={["sm"]}
+        w={["xs", "sm"]}
         textAlign="center"
         size="lg"
 
