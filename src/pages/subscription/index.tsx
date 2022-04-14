@@ -1,12 +1,14 @@
-import { Button, Checkbox, Container, Flex, Icon, Switch, Text, useToast } from "@chakra-ui/react";
+import { Button, Checkbox, Container, Flex, Icon, SimpleGrid, Switch, Text, useToast } from "@chakra-ui/react";
 import { darken } from "polished";
 import { useState } from "react";
-import { Image } from "../components/Image";
-import { MainHero } from "../components/parts/MainHero";
-import { Section } from "../components/Section";
-import { theme } from "../styles/theme";
+import { Image } from "../../components/Image";
+import { Section } from "../../components/Section";
+import { theme } from "../../styles/theme";
 import Router from 'next/router'
-import { Header } from "../components/Header";
+import { Header } from "../../components/Header";
+import { Input } from "../../components/Input";
+import { CyclistFormFields } from "../../components/Forms/CyclistFormFields";
+import { MainHero } from "../../components/parts/MainHero";
 
 export default function SubscriptionPage() {
   const toast = useToast()
@@ -30,12 +32,13 @@ export default function SubscriptionPage() {
         <Text
           fontFamily="heading"
           fontWeight="black"
-          fontSize="4xl"
+          fontSize={["xl", "2xl", "2xl", "3xl"]}
           textTransform="uppercase"
+          alignSelf={["center", "center", "flex-start"]}
 
           bgColor="white"
 
-          w="lg"
+          w={["md", "sm", "lg", "lg"]}
           textAlign="center"
           px="8"
           py="6"
@@ -47,8 +50,9 @@ export default function SubscriptionPage() {
         >
           Página de inscrição
         </Text>
-      </Section>
 
+        <CyclistFormFields />
+      </Section>
     </Flex>
 
   )
