@@ -1,6 +1,6 @@
 import { Button, Checkbox, Container, Flex, Icon, SimpleGrid, Switch, Text, useToast } from "@chakra-ui/react";
 import { darken } from "polished";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Image } from "../../components/Image";
 import { Section } from "../../components/Section";
 import { theme } from "../../styles/theme";
@@ -9,11 +9,11 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { CyclistFormFields } from "../../components/Forms/CyclistFormFields";
 import { MainHero } from "../../components/parts/MainHero";
+import { isAfter } from "date-fns";
 
 export default function SubscriptionPage() {
   const toast = useToast()
 
-  const [isChecked, setIsChecked] = useState(false);
 
   return (
     <Flex

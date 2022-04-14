@@ -56,7 +56,7 @@ export default function SubmitPage() {
       >
         <Text
           pos="absolute"
-          bottom="0"
+          bottom="20"
           left="50%"
 
           fontFamily="heading"
@@ -66,7 +66,7 @@ export default function SubmitPage() {
 
           bgColor="white"
 
-          w={["sm", "md", "lg"]}
+          w={["xs", "md", "lg"]}
           textAlign="center"
           px={["6", "8", "8"]}
           py="6"

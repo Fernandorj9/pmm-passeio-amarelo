@@ -5,12 +5,15 @@ import { Section } from '../components/Section'
 import { ButtonLink } from '../components/ButtonLink'
 import { Header } from '../components/Header'
 import { MainHero } from '../components/parts/MainHero'
+import { useIsAfterDate } from '../hooks/useIsAfterDate'
 
 export default function Home() {
   const isMobileVersion = useBreakpointValue({
     base: true,
     md: false,
   })
+
+  const { isAfterDate } = useIsAfterDate();
 
   return (
     <Flex
@@ -30,7 +33,7 @@ export default function Home() {
           Inscrições de <br />18 a 27 de abril
         </Heading>
         <ButtonLink
-          href="/submit"
+          href="/regulamento"
           pos="absolute"
           transform="translate(-50%, 50%)"
           bottom={["12", "12", "0", "0",]}
@@ -49,7 +52,7 @@ export default function Home() {
 
           zIndex="2"
         >
-          Quero me inscrever
+          {isAfterDate ? "Quero me inscrever" : "Ler regulamento"}
         </ButtonLink>
       </MainHero>
 
@@ -62,8 +65,8 @@ export default function Home() {
         overflow="hidden"
         backgroundImage="/assets/camisa-maio-amarelo.webp"
         backgroundRepeat="no-repeat"
-        backgroundSize={["800px", "950px", "950px", "600px"]}
-        backgroundPosition={["right -600px bottom -50px", "right -700px bottom -50px", "right -700px bottom -50px", "right -200px bottom -100px",]}
+        backgroundSize={["200px", "950px", "500px", "600px"]}
+        backgroundPosition={["right -20px bottom -100px", "right -700px bottom -50px", "right -200px bottom -200px", "right -200px bottom -200px", "left 90% bottom -200px",]}
       >
         <Heading
           color="brand.yellow"
@@ -143,7 +146,7 @@ export default function Home() {
               justify="center"
               align={["center", "center", "center", "center", "flex-start"]}
             >
-              <Text fontSize={["4xl", "4xl", "4xl", "5xl", "7xl"]} mb={["-6", "-6", "-6", "-8", "-10"]}>1KG</Text>
+              <Text fontSize={["4xl", "4xl", "4xl", "5xl", "7xl"]} mb={["-6", "-6", "-6", "-8", "-10"]}>2KG</Text>
               <Text>DE ALIMENTO</Text>
             </Flex>
           </Flex>
@@ -245,7 +248,7 @@ export default function Home() {
               borderWidth="4px"
               borderColor="brand.black"
               opacity="1"
-              mx="2"
+              my="4"
             />
             : <Divider
               orientation={"vertical"}
@@ -253,7 +256,7 @@ export default function Home() {
               borderWidth="4px"
               borderColor="brand.black"
               opacity="1"
-              mx="2"
+              mx="4"
             />}
 
           <Flex
@@ -328,7 +331,7 @@ export default function Home() {
               borderWidth="4px"
               borderColor="white"
               opacity="1"
-              mx="2"
+              my="4"
             />
             : <Divider
               orientation="vertical"
@@ -336,7 +339,7 @@ export default function Home() {
               borderWidth="4px"
               borderColor="white"
               opacity="1"
-              mx="2"
+              mx="4"
             />}
 
 
