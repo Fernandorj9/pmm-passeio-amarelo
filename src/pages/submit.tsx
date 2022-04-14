@@ -1,20 +1,21 @@
-import { Button, Checkbox, Container, Flex, Icon, Switch, Text, useToast } from "@chakra-ui/react";
+import { Button, Checkbox, Container, Flex, FormLabel, Icon, Switch, Text, useToast } from "@chakra-ui/react";
 import { darken } from "polished";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Image } from "../components/Image";
-import { MainHero } from "../components/parts/MainHero";
 import { Section } from "../components/Section";
 import { theme } from "../styles/theme";
 import Router from 'next/router'
 import { Header } from "../components/Header";
+import { MainHero } from "../components/parts/MainHero";
+import dynamic from "next/dynamic";
 
 export default function SubmitPage() {
   const toast = useToast()
 
   const [isChecked, setIsChecked] = useState(false);
 
-  function handleChecked() {
-    setIsChecked(!isChecked);
+  function handleChecked(event: ChangeEvent<HTMLInputElement>) {
+    setIsChecked(event.target.checked)
   }
 
   function handleContinue() {
@@ -84,34 +85,38 @@ export default function SubmitPage() {
             transition=".5s all"
             _hover={{
               bgColor: darken(0.07, '#FCE321')
-
             }}
-
-            onClick={handleChecked}
           >
 
             <Switch
+              id="isChecked"
               size="lg"
               colorScheme="blackAlpha"
               isChecked={isChecked}
+              onChange={handleChecked}
+
             />
-            <Text
+            <FormLabel
               color="black"
-              fontSize={["sm", "sm", "4xl"]}
+              htmlFor="isChecked"
+              fontSize={["sm", "sm", "2xl", "2xl", "3xl"]}
               textTransform="uppercase"
               fontFamily="heading"
               fontWeight="black"
+              // pr="10"
+              margin="0"
+              cursor="pointer"
 
             >
               Eu li e concordo com o regulamento
-            </Text>
+            </FormLabel>
           </Flex>
           <Button
             size="lg"
 
             fontFamily="heading"
             fontWeight="black"
-            fontSize={["md", "md", "4xl"]}
+            fontSize={["md", "md", "2xl", "3xl"]}
             textTransform="uppercase"
 
             rounded="full"
@@ -135,6 +140,43 @@ export default function SubmitPage() {
             CONTINUAR
           </Button>
         </Flex>
+
+        <Flex
+          // overflowY="scroll"
+          direction="column"
+          bgColor="white"
+
+          fontSize="lg"
+
+          textAlign="justify"
+          px="4"
+          py="6"
+        >
+          <Text alignSelf="center" fontWeight="bold" mb="4">REGULAMENTO</Text>
+
+          <Text mb="2">	O evento esportivo, PASSEIO CICLÍSTICO MAIO AMARELO 2022 doravante denominado  PASSEIO, será realizado na cidade de Mossoró com largada e chegada na rua Juvenal Lamartine, ao lado do antigo Fórum e poderão participar pessoas de ambos os sexos, regularmente inscritos de acordo com o REGULAMENTO OFICIAL do PASSEIO.</Text>
+
+          <Text mb="2">	O Passeio Ciclístico Maio Amarelo 2022, idealizado pela Secretaria Municipal de Segurança Pública, Defesa Civil, Mobilidade Urbana e Trânsito (SESDEM) tem como objetivo alerta a população sobre a importância de um trânsito seguro. Além de estimular o uso de bicicletas como atividade física esportiva, na promoção da saúde e bem-estar. Possibilitando ainda uma alternativa de transporte, promovendo um ambiente mais saudável e sustentável.</Text>
+
+          <Text mb="2">	O PASSEIO será realizado no dia 01/05/2022 com concentração às 6h e largada as 6h30min.</Text>
+
+          <Text mb="2">	As inscrições serão realizadas somente pelo site: www.mossoro.rn.gov.br/passeiomaioamarelo tendo início no dia 18/04/2022 e término no dia 27/04/2022.</Text>
+
+          <Text mb="2">	A inscrição só será validada após doação de 2kg de alimento não perecível que devem ser entregues no dia 28/04 de 8h às 17h na SESDEM. Os alimentos arrecadados serão doados para a Instituições filantrópicas. O participante deverá apresentar no ato da doação um documento original com foto.</Text>
+
+          <Text mb="2">	O participante devidamente inscrito receberá no dia da doação dos alimentos um camiseta alusiva ao evento juntamente com um passaporte (pulseira) que dará direito a receber uma medalha personalizada de metal no final do evento.</Text>
+
+          <Text mb="2">	Somente será válida uma inscrição por CPF, menores de 18 anos só poderão participar acompanhados por um responsável. Todos os participantes devem possuir CPF.</Text>
+
+          <Text mb="2">	Declaro que estou em plenas condições físicas e psicológicas de participar deste PASSEIO e estou ciente que não existe nenhuma recomendação médica que me impeça de praticar atividades físicas.</Text>
+
+          <Text mb="2">	Assumo, por minha livre e espontânea vontade, todos os riscos envolvidos e suas consequências pela participação neste PASSEIO, isentando seus organizadores, colaboradores e patrocinadores DE TODA E QUALQUER RESPONSABILIDADE por quaisquer danos materiais, morais ou físicos, que porventura venha a sofrer, advindos da participação neste PASSEIO.</Text>
+
+          <Text mb="2">	Compreendi e estou de acordo com todos os itens deste TERMO DE RESPONSABILIDADE, isentando assim quem quer que seja, de toda e qualquer responsabilidade legal de tudo o que vier a ocorrer comigo por consequência da minha participação nesta PROVA.</Text>
+
+        </Flex>
+
+        {/* <PDFViewer /> */}
 
       </Section>
 
