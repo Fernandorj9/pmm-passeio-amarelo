@@ -1,6 +1,6 @@
 import { Button, Checkbox, Container, Flex, FormLabel, Icon, Switch, Text, useToast } from "@chakra-ui/react";
 import { darken } from "polished";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Image } from "../components/Image";
 import { Section } from "../components/Section";
 import { theme } from "../styles/theme";
@@ -8,18 +8,30 @@ import Router from 'next/router'
 import { Header } from "../components/Header";
 import { MainHero } from "../components/parts/MainHero";
 import dynamic from "next/dynamic";
+import { isAfter } from "date-fns";
+import { useIsAfterDate } from "../hooks/useIsAfterDate";
 
 export default function SubmitPage() {
   const toast = useToast()
 
   const [isChecked, setIsChecked] = useState(false);
 
+  const { isAfterDate } = useIsAfterDate();
+
   function handleChecked(event: ChangeEvent<HTMLInputElement>) {
     setIsChecked(event.target.checked)
   }
 
   function handleContinue() {
-    if (isChecked) {
+    if (!isAfterDate) {
+      toast({
+        title: "Fora do período de inscrições",
+        description: "As inscrições iniciam no dia 18 de abril de 2022.",
+        isClosable: true,
+        position: "top",
+        status: "info"
+      })
+    } else if (isChecked && isAfter) {
       Router.push('/subscription')
     } else {
       toast({
@@ -27,7 +39,7 @@ export default function SubmitPage() {
         description: "Você precisa aceitar o regulamento para continuar",
         isClosable: true,
         position: "top",
-        status: "info"
+        status: "warning",
       })
     }
   }
@@ -65,14 +77,14 @@ export default function SubmitPage() {
           transform="translate(-50%, 50%)"
           zIndex="2"
         >
-          INSCRIÇÃO
+          {isAfterDate ? "INSCRIÇÃO" : "REGULAMENTO"}
         </Text>
       </MainHero>
       <Section
         bgColor="black"
       >
 
-        <Flex>
+        {isAfterDate && <Flex>
           <Flex
             align="center"
             gridGap="4"
@@ -128,7 +140,7 @@ export default function SubmitPage() {
 
             zIndex="2"
 
-            disabled={!isChecked}
+            aria-disabled={!isChecked || !isAfterDate}
             autoFocus={isChecked}
             _disabled={{
               opacity: 1,
@@ -139,7 +151,7 @@ export default function SubmitPage() {
           >
             CONTINUAR
           </Button>
-        </Flex>
+        </Flex>}
 
         <Flex
           // overflowY="scroll"
