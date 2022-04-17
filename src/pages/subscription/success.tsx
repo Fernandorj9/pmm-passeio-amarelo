@@ -1,16 +1,16 @@
-import { Box, Button, Checkbox, Container, Flex, Heading, Icon, Image, SimpleGrid, Switch, Text, useToast } from "@chakra-ui/react";
-import { darken } from "polished";
+import { Container, Flex, Heading, SimpleGrid, Text, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 import { Section } from "../../components/Section";
-import { theme } from "../../styles/theme";
-import Router from 'next/router'
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
-import { CyclistFormFields } from "../../components/Forms/CyclistFormFields";
 import { MainHero } from "../../components/parts/MainHero";
 import { StepCard } from "../../components/Cards/StepCard";
+import { GetServerSideProps } from "next";
 
-export default function SuccessPage() {
+type Props = {
+  hasConfirmed: boolean
+}
+
+export default function SuccessPage({ hasConfirmed }: Props) {
   const toast = useToast()
 
   const [isChecked, setIsChecked] = useState(false);
@@ -48,7 +48,7 @@ export default function SuccessPage() {
           size="lg"
           rounded="full"
         >
-          Inscrição realizada com sucesso
+          Inscrição {hasConfirmed ? `confirmada` : `realizada`} com sucesso
         </Text>
 
         <Flex
@@ -57,6 +57,7 @@ export default function SuccessPage() {
           mt="10"
 
           gridGap="4"
+          order={[2, 2, 1]}
         >
           <Heading
             textTransform="uppercase"
@@ -68,7 +69,7 @@ export default function SuccessPage() {
           </Heading>
 
           <SimpleGrid
-            columns={4}
+            columns={[1, 1, 2, 2, 4, 4, 4]}
             w="100%"
             gridGap="8"
           >
@@ -77,12 +78,14 @@ export default function SuccessPage() {
               concluded={true}
             />
             <StepCard
-              step={<>Confirmar <br /> inscrição</>}
-              concluded={false}
+              step={hasConfirmed ? <>inscrição <br /> confirmada</> : <>Confirmar <br /> inscrição</>}
+              concluded={hasConfirmed}
+              isNextStep={!hasConfirmed}
             />
             <StepCard
               step={<>Pegar <br /> camiseta</>}
               concluded={false}
+              isNextStep={hasConfirmed}
             />
             <StepCard
               step={<>Passeio <br /> ciclístico</>}
@@ -90,8 +93,38 @@ export default function SuccessPage() {
             />
           </SimpleGrid>
         </Flex>
+
+        <Container
+          maxWidth="8xl"
+
+          order={[1, 1, 2]}
+
+          fontSize="2xl"
+          fontFamily="heading"
+          fontWeight="medium"
+          color="white"
+
+          textAlign="center"
+        >
+          {!hasConfirmed && <Text mb="2">Enviamos um comprovante de inscrição para seu e-mail.</Text>}
+          <Text>
+            Não esqueça de confirmar sua inscrição para o Passeio Ciclístico Maio Amarelo 2022
+            levando 2kg de alimento até a SESDEM no dia 28 de abril, das 7h às 17h.
+          </Text>
+        </Container>
       </Section>
     </Flex>
 
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+
+  const hasConfirmed = ctx.query.hasConfirmed == "1"
+
+  return {
+    props: {
+      hasConfirmed
+    }
+  }
 }
