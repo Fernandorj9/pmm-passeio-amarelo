@@ -48,7 +48,7 @@ export function CyclistFormFields() {
         status: "success"
       })
 
-      // Router.push('/subscription/success')
+      Router.push('/subscription/success')
 
     } catch (e) {
       console.log(e)
