@@ -1,14 +1,38 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, keyframes, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { AniImage } from "../animated/Image";
 
 type Props = {
   step: ReactNode,
+  isNextStep?: boolean,
   concluded: boolean,
 }
 
-export function StepCard({ step, concluded }: Props) {
+const animationKeyframes = keyframes`
+  0% { transform: scale(1)  }
+  25% { transform: scale(1.05)  }
+  50% {  }
+  75% {  }
+  100% { transform: scale(1) }
+`;
+
+const animationImageKeyframes = keyframes`
+  0% { transform: translate(0, 0)  }
+  25% { transform: translate(0, -5px)  }
+  50% {  }
+  75% {  }
+  100% { transform: translate(0, 0) }
+`;
+
+const animation = `${animationKeyframes} 2s ease-in-out infinite`
+const animationImage = `${animationImageKeyframes} 2s ease infinite`
+
+export function StepCard({ isNextStep = false, step, concluded }: Props) {
   return (
     <Flex
+      as={motion.div}
+      animation={isNextStep && animation}
       h="52"
 
       justify="center"
@@ -20,15 +44,17 @@ export function StepCard({ step, concluded }: Props) {
       bgColor={concluded ? "white" : "none"}
       position="relative"
     >
-      {concluded && <Image
+      {concluded && <AniImage
+        animation={animationImage}
+
         src="/assets/icons/success-icon.webp"
         alt="ícone de sucesso"
         w="28"
 
-        top="0"
-        left="0"
+        top="25%"
+        left="-2"
         position="absolute"
-        transform="translate(-25%, 50%)"
+
       />
       }
 
