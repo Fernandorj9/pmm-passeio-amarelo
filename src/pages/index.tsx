@@ -136,6 +136,7 @@ export default function Home() {
               width="400"
               height="400"
               objectFit="contain"
+              placeholder="blur"
             />
             <Flex
               direction="column"
@@ -178,6 +179,7 @@ export default function Home() {
                 w="36"
                 width="400"
                 height="400"
+                placeholder="blur"
               />
               <Text
                 fontSize={["2xl", "2xl", "2xl", "4xl"]}
@@ -204,6 +206,7 @@ export default function Home() {
                 w="36"
                 width="242"
                 height="243"
+                placeholder="blur"
               />
               <Text
                 fontSize={["2xl", "2xl", "2xl", "4xl"]}
@@ -240,6 +243,7 @@ export default function Home() {
             maxW="lg"
             width="400"
             height="400"
+            placeholder="blur"
           />
 
           {isMobileVersion
@@ -313,6 +317,7 @@ export default function Home() {
               w="60"
               width="500"
               height="443"
+              placeholder="blur"
             />
 
             <Text
