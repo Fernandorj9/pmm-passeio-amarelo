@@ -107,6 +107,7 @@ export default function SuccessPage({ hasConfirmed }: Props) {
           textAlign="center"
         >
           {!hasConfirmed && <Text mb="2">Enviamos um comprovante de inscrição para seu e-mail.</Text>}
+          {!hasConfirmed && <Text fontWeight="bold" mb="2">Verifique também sua caixa de spam.</Text>}
           <Text>
             Não esqueça de confirmar sua inscrição para o Passeio Ciclístico Maio Amarelo 2022
             levando 2kg de alimento até a SESDEM no dia 28 de abril, das 7h às 17h.
