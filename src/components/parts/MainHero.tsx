@@ -14,7 +14,7 @@ export function MainHero({ children, ...rest }: Props) {
       id="principal-section"
       w="100%"
       h={["90vh", "90vh", "md"]}
-      minH={["90vh", "md", "100%"]}
+      minH={["auto", "md", "100%"]}
       bgColor="brand.yellow"
       position="relative"
       align="center"

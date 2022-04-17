@@ -26,15 +26,16 @@ export function Header({ pageName }: Props) {
         <Image
           src="/assets/logo-prefeitura.webp"
           alt="logo da prefeitura municipal de mossoró em conjunto com a Secretaria Municipal de Segurança Pública, Defesa Civil, Mobilidade Urbana e Trânsito (SESDEM)"
-          w={["40", "xs"]}
+          w={["40", "2xs", "3xs", "2xs", "2xs", "xs"]}
+
           width="600"
           height="258"
 
           position="absolute"
-          bottom={["0", "-20"]}
-          left={["50%", "50%", "auto",]}
+          bottom={["-10", "-12", "-12", "-20"]}
+          left={["50%", "50%", "50%", "50%", "50%", "auto",]}
 
-          transform={["translate(-50%, 0%)", "translate(-50%, 0%)", "translate(0%, 0%)"]}
+          transform={["translate(-50%, 0%)", "translate(-50%, 0%)", "translate(-50%, 0%)", "translate(-50%, 0%)", "translate(-50%, 0%)", "translate(0%, 0%)"]}
 
           zIndex="10"
         />

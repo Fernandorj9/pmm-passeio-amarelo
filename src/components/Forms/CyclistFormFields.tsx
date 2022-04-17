@@ -20,8 +20,6 @@ export function CyclistFormFields() {
   const [cep, setCep] = useState("");
   const [isAddressEditable, setIsAddressEditable] = useState(true);
 
-  console.log(errors)
-
   const handleCyclistSubmit: SubmitHandler<ICyclistFormFields> = async (values, e) => {
     // console.log(values)
 
@@ -44,7 +42,7 @@ export function CyclistFormFields() {
 
       toast({
         title: "Sucesso",
-        description: "Inscrição realiza cadastrado com sucesso",
+        description: "Inscrição realizada com sucesso",
         isClosable: true,
         position: "top",
         status: "success"
@@ -57,7 +55,7 @@ export function CyclistFormFields() {
 
       toast({
         title: "Falha no cadastro",
-        description: e.response?.data.message[0] || e.message || "Erro no cadastro",
+        description: e.response?.data.message || e.message || "Erro no cadastro",
         isClosable: true,
         position: "top",
         status: "error"

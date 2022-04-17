@@ -56,7 +56,7 @@ export default function SubmitPage() {
       >
         <Text
           pos="absolute"
-          bottom="20"
+          bottom={["20", "0"]}
           left="50%"
 
           fontFamily="heading"
