@@ -11,6 +11,7 @@ const colors = {
   brand: {
     yellow: "#FCE321",
     green: "#00A550",
+    red: "#f2545b",
     black: "#000000"
   },
 }
