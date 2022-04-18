@@ -48,7 +48,7 @@ export default function SubmitPage() {
       w="100%"
       direction="column"
     >
-      <Header pageName="Inscrição | Passeio ciclístico Maio Amarelo 2022" />
+      <Header pageName="Regulamento | Passeio ciclístico Maio Amarelo 2022" />
 
       {/* principal */}
       <MainHero
