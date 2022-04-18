@@ -70,6 +70,14 @@ export const findCyclists = async (): Promise<IFindCyclists> => {
   return { cyclists, count }
 }
 
+export const getCyclistSubscriptionsCount = async (): Promise<number> => {
+  const response: AxiosResponse<number> = await api.get<number>(`countCompetitors`);
+
+  let count: number = response.data
+
+  return count
+}
+
 // export const findCyclist = async (id: number): Promise<Cyclist | null> => {
 
 //   if (id === null || id <= 0) {
