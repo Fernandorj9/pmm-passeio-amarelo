@@ -10,6 +10,7 @@ import { Input } from "../../components/Input";
 import { CyclistFormFields } from "../../components/Forms/CyclistFormFields";
 import { MainHero } from "../../components/parts/MainHero";
 import { isAfter } from "date-fns";
+import { Contact } from "../../components/parts/Contact";
 
 export default function SubscriptionPage() {
   const toast = useToast()
@@ -53,6 +54,8 @@ export default function SubscriptionPage() {
 
         <CyclistFormFields />
       </Section>
+
+      <Contact />
     </Flex>
 
   )

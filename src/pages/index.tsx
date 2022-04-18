@@ -1,4 +1,4 @@
-import { Divider, Flex, Heading, Icon, Text, useBreakpointValue } from '@chakra-ui/react'
+import { Container, Divider, Flex, Heading, Icon, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Image } from '../components/Image'
 import { MdWatchLater } from 'react-icons/md'
 import { Section } from '../components/Section'
@@ -6,6 +6,8 @@ import { ButtonLink } from '../components/ButtonLink'
 import { Header } from '../components/Header'
 import { MainHero } from '../components/parts/MainHero'
 import { useIsAfterDate } from '../hooks/useIsAfterDate'
+import { Contact } from '../components/parts/Contact'
+import { Link } from '../components/Link'
 
 export default function Home() {
   const isMobileVersion = useBreakpointValue({
@@ -290,6 +292,17 @@ export default function Home() {
               Contemplando espaços públicos e unidades dos principais parceiros do projeto.</Text>
           </Flex>
         </Flex>
+
+        <Image
+          src="/assets/percurso.jpeg"
+          alt="figura de um mapa com a rota do passeio ciclístico."
+          maxW="5xl"
+          width="1280"
+          height="904"
+          alignSelf="center"
+          placeholder="blur"
+
+        />
       </Section >
 
       <Section
@@ -366,6 +379,30 @@ export default function Home() {
         </Flex>
       </Section>
 
+      <Contact />
+
+      <Flex
+        as="footer"
+        bgColor="black"
+        align="center"
+        justify="space-between"
+        p="4"
+      >
+        <Link
+          href="https://www.instagram.com/prefeiturademossoro/"
+          color="gray.500">
+          Prefeitura
+          Municipal
+          de
+          Mossoró
+        </Link>
+        <Link
+          href="https://instagram.com/rellysondouglaas"
+          isExternal
+          color="gray.700">
+          Developed by Rellyson
+        </Link>
+      </Flex>
     </Flex >
   )
 }
