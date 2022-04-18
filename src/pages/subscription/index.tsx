@@ -11,10 +11,11 @@ import { CyclistFormFields } from "../../components/Forms/CyclistFormFields";
 import { MainHero } from "../../components/parts/MainHero";
 import { isAfter } from "date-fns";
 import { Contact } from "../../components/parts/Contact";
+import { useIsActiveSubscription } from "../../hooks/useIsActiveSubscription";
 
 export default function SubscriptionPage() {
-  const toast = useToast()
 
+  const { isActiveSubscription } = useIsActiveSubscription()
 
   return (
     <Flex
@@ -30,29 +31,38 @@ export default function SubscriptionPage() {
       <Section
         bgColor="black"
       >
-        <Text
-          fontFamily="heading"
-          fontWeight="black"
-          fontSize={["xl", "2xl", "2xl", "3xl"]}
-          textTransform="uppercase"
-          alignSelf={["center", "center", "flex-start"]}
+        {isActiveSubscription ?
+          (
+            <>
+              <Text
+                fontFamily="heading"
+                fontWeight="black"
+                fontSize={["xl", "2xl", "2xl", "3xl"]}
+                textTransform="uppercase"
+                alignSelf={["center", "center", "flex-start"]}
 
-          bgColor="white"
+                bgColor="white"
 
-          w={["md", "sm", "lg", "lg"]}
-          textAlign="center"
-          px="8"
-          py="6"
+                w={["md", "sm", "lg", "lg"]}
+                textAlign="center"
+                px="8"
+                py="6"
 
-          boxShadow="0px 0px 10px 10px rgba(0,0,0,0.05)"
+                boxShadow="0px 0px 10px 10px rgba(0,0,0,0.05)"
 
-          size="lg"
-          rounded="full"
-        >
-          Página de inscrição
-        </Text>
+                size="lg"
+                rounded="full"
+              >
+                Página de inscrição
+              </Text>
 
-        <CyclistFormFields />
+              <CyclistFormFields />
+            </>
+          ) :
+          <Flex justify="center" w="100%">
+            <Text color="white">Inscrições esgotadas</Text>
+          </Flex>}
+
       </Section>
 
       <Contact />

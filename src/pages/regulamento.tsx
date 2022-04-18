@@ -9,24 +9,24 @@ import { Header } from "../components/Header";
 import { MainHero } from "../components/parts/MainHero";
 import dynamic from "next/dynamic";
 import { isAfter } from "date-fns";
-import { useIsAfterDate } from "../hooks/useIsAfterDate";
+import { useIsActiveSubscription } from "../hooks/useIsActiveSubscription";
 
 export default function SubmitPage() {
   const toast = useToast()
 
   const [isChecked, setIsChecked] = useState(false);
 
-  const { isAfterDate } = useIsAfterDate();
+  const { isActiveSubscription } = useIsActiveSubscription();
 
   function handleChecked(event: ChangeEvent<HTMLInputElement>) {
     setIsChecked(event.target.checked)
   }
 
   function handleContinue() {
-    if (!isAfterDate) {
+    if (!isActiveSubscription) {
       toast({
-        title: "Fora do período de inscrições",
-        description: "As inscrições iniciam no dia 18 de abril de 2022.",
+        title: "Inscrições esgotadas",
+        description: "Foram atingidas 600 inscrições.",
         isClosable: true,
         position: "top",
         status: "info"
@@ -77,14 +77,14 @@ export default function SubmitPage() {
           transform="translate(-50%, 50%)"
           zIndex="2"
         >
-          {isAfterDate ? "INSCRIÇÃO" : "REGULAMENTO"}
+          {isActiveSubscription ? "INSCRIÇÃO" : "REGULAMENTO"}
         </Text>
       </MainHero>
       <Section
         bgColor="black"
       >
 
-        {isAfterDate && <Flex>
+        {isActiveSubscription ? <Flex>
           <Flex
             align="center"
             gridGap="4"
@@ -140,7 +140,7 @@ export default function SubmitPage() {
 
             zIndex="2"
 
-            aria-disabled={!isChecked || !isAfterDate}
+            aria-disabled={!isChecked || !isActiveSubscription}
             autoFocus={isChecked}
             _disabled={{
               opacity: 1,
@@ -151,7 +151,12 @@ export default function SubmitPage() {
           >
             CONTINUAR
           </Button>
-        </Flex>}
+        </Flex>
+          :
+          <Flex justify="center" w="100%">
+            <Text color="white">Inscrições esgotadas</Text>
+          </Flex>
+        }
 
         <Flex
           // overflowY="scroll"

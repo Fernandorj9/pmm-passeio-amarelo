@@ -5,7 +5,7 @@ import { Section } from '../components/Section'
 import { ButtonLink } from '../components/ButtonLink'
 import { Header } from '../components/Header'
 import { MainHero } from '../components/parts/MainHero'
-import { useIsAfterDate } from '../hooks/useIsAfterDate'
+import { useIsActiveSubscription } from '../hooks/useIsActiveSubscription'
 import { Contact } from '../components/parts/Contact'
 import { Link } from '../components/Link'
 
@@ -15,7 +15,7 @@ export default function Home() {
     md: false,
   })
 
-  const { isAfterDate } = useIsAfterDate();
+  const { isActiveSubscription } = useIsActiveSubscription();
 
   return (
     <Flex
@@ -35,7 +35,7 @@ export default function Home() {
           Inscrições de <br />18 a 27 de abril
         </Heading>
         <ButtonLink
-          href="/regulamento"
+          href={isActiveSubscription ? "/regulamento" : "#"}
           pos="absolute"
           transform="translate(-50%, 50%)"
           bottom={["12", "12", "0", "0",]}
@@ -54,7 +54,7 @@ export default function Home() {
 
           zIndex="2"
         >
-          {isAfterDate ? "Quero me inscrever" : "Ler regulamento"}
+          {isActiveSubscription ? "Quero me inscrever" : "Inscrições esgotadas"}
         </ButtonLink>
       </MainHero>
 
