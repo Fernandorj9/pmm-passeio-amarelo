@@ -7,7 +7,7 @@ interface DbContact {
   name: string,
   cpf: string,
   message: string,
-  type: string
+  tipo: string
 }
 
 export function dbToModel(dbContact: DbContact): Contact {
@@ -16,7 +16,7 @@ export function dbToModel(dbContact: DbContact): Contact {
     name: dbContact.name,
     cpf: dbContact.cpf,
     message: dbContact.message,
-    type: dbContact.type
+    type: dbContact.tipo
   }
 }
 
@@ -26,7 +26,7 @@ export function modelToDb(contact: Contact): DbContact {
     name: contact.name,
     cpf: contact.cpf,
     message: contact.message,
-    type: contact.type
+    tipo: contact.type
   }
 }
 
