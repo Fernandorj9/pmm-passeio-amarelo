@@ -29,6 +29,7 @@ export function ContactFormFields() {
       cpf: values.cpf,
       email: values.email,
       message: values.message,
+      type: values.type,
     }
 
     try {
