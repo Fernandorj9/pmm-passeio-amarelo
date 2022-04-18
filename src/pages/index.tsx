@@ -35,7 +35,7 @@ export default function Home() {
           Inscrições de <br />18 a 27 de abril
         </Heading>
         <ButtonLink
-          href={isActiveSubscription ? "/regulamento" : "#"}
+          href={"/regulamento"}
           pos="absolute"
           transform="translate(-50%, 50%)"
           bottom={["12", "12", "0", "0",]}
@@ -54,7 +54,7 @@ export default function Home() {
 
           zIndex="2"
         >
-          {isActiveSubscription ? "Quero me inscrever" : "Inscrições esgotadas"}
+          {isActiveSubscription ? "Quero me inscrever" : "Regulamento"}
         </ButtonLink>
       </MainHero>
 
