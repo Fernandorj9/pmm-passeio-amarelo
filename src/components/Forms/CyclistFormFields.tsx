@@ -126,6 +126,7 @@ export function CyclistFormFields() {
             type="text"
 
             label="CPF"
+            placeholder="999.999.999-99"
             onChange={(event) =>
               setValue(CYCLIST_SCHEMA.CPF,
                 mask(event.currentTarget.value, '999.999.999-99'),
@@ -154,6 +155,7 @@ export function CyclistFormFields() {
           type="text"
 
           label="CEP"
+          placeholder="596XX-XXX"
           value={cep}
 
           onChange={(event) => {

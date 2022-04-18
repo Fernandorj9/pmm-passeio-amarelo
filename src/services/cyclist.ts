@@ -53,16 +53,22 @@ export function modelToDb(cyclist: Cyclist): DbCyclist {
   }
 }
 
-// export const findCyclists = async (page: number = PAGE_INIT, size: number = PAGE_SIZE, sort: ORDER = PAGE_SORT): Promise<Cyclist[]> => {
-//   const response: AxiosResponse<Page<DbCyclist>> = await api.get<Page<DbCyclist>>(`cyclists?page=${page}&size=${size}&sort=${sort}`);
+type IFindCyclists = {
+  cyclists: Cyclist[],
+  count: number
+}
 
-//   let newCyclists: Cyclist[] = []
+export const findCyclists = async (): Promise<IFindCyclists> => {
+  const response: AxiosResponse<DbCyclist[]> = await api.get<DbCyclist[]>(`cyclists`);
 
-//   for (let newAdmin of response.data.content) {
-//     newCyclists.push(dbToModel(newAdmin))
-//   }
-//   return newCyclists
-// }
+  let cyclists: Cyclist[] = []
+  let count: number = response.data.filter(cyclist => cyclist.subscriptionConfirmation).length
+
+  for (let newCyclist of response.data) {
+    cyclists.push(dbToModel(newCyclist))
+  }
+  return { cyclists, count }
+}
 
 // export const findCyclist = async (id: number): Promise<Cyclist | null> => {
 
@@ -92,15 +98,11 @@ export const createCyclist = async (cyclist: Cyclist): Promise<Cyclist> => {
 
   let dbCyclist = modelToDb(newCyclist)
 
-  console.log(dbCyclist)
-
   delete dbCyclist.id
 
   const response: AxiosResponse<DbCyclist> = await api.post<DbCyclist>('/saveCadastro', dbCyclist)
 
   newCyclist = dbToModel(response.data)
-
-  console.log(newCyclist)
 
   return newCyclist
 }
