@@ -69,7 +69,7 @@ export const createContact = async (contact: Contact): Promise<Contact> => {
 
   let dbContact = modelToDb(newContact)
 
-  const response: AxiosResponse<DbContact> = await api.post<DbContact>('/saveCadastro', dbContact)
+  const response: AxiosResponse<DbContact> = await api.post<DbContact>('/saveContato', dbContact)
 
   newContact = dbToModel(response.data)
 
