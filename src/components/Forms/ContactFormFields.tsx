@@ -18,6 +18,8 @@ export function ContactFormFields() {
     resolver: yupResolver(contactFormSchema)
   })
 
+  console.log(errors)
+
   const handleContactSubmit: SubmitHandler<IContactFormFields> = async (values, e) => {
     // console.log(values)
 

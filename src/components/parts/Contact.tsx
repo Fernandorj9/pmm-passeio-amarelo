@@ -1,5 +1,5 @@
 import { Heading, Text } from "@chakra-ui/react";
-import { ContactFormFields } from "../Forms/ContactFields";
+import { ContactFormFields } from "../Forms/ContactFormFields";
 import { Section } from "../Section";
 
 export function Contact() {

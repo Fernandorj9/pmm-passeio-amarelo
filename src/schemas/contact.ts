@@ -6,7 +6,6 @@ import { convertEnumToArray } from '../utils/enumToArray'
 export const contactFormSchema = yup.object().shape({
   name: yup.string().required("Nome é obrigatório"),
   cpf: yup.string().required("CPF é obrigatório").length(14, "Entre com um CPF válido"),
-  cep: yup.string().required("CEP é obrigatório").length(9, "Entre com um CEP válido"),
   email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
   message: yup.string().required("Mensagem obrigatória"),
   type: yup.string()
