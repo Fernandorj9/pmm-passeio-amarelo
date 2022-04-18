@@ -6,7 +6,7 @@ export function useIsAfterDate() {
 
   function verifyIsAfter() {
     // today is bigger than 04/18/2022
-    return isAfter(new Date(), new Date("2022-04-18"))
+    return isAfter(new Date(), new Date("2023-04-18"))
   }
 
   useEffect(() => {
