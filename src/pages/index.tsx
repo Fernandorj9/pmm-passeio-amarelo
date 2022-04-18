@@ -396,12 +396,10 @@ export default function Home() {
           de
           Mossoró
         </Link>
-        <Link
-          href="https://instagram.com/rellysondouglaas"
-          isExternal
+        <Text
           color="gray.700">
-          Developed by Rellyson
-        </Link>
+          Developed by @rellysondouglaas
+        </Text>
       </Flex>
     </Flex >
   )
