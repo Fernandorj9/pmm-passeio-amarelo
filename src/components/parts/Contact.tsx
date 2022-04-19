@@ -5,6 +5,7 @@ import { Section } from "../Section";
 export function Contact() {
   return (
     <Section
+      id="contato"
       bgColor="brand.yellow"
     >
       <Heading>Contato</Heading>

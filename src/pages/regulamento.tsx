@@ -10,6 +10,9 @@ import { MainHero } from "../components/parts/MainHero";
 import dynamic from "next/dynamic";
 import { isAfter } from "date-fns";
 import { useIsActiveSubscription } from "../hooks/useIsActiveSubscription";
+import { Link } from "../components/Link";
+import { Contact } from "../components/parts/Contact";
+import { Footer } from "../components/parts/Footer";
 
 export default function SubmitPage() {
   const toast = useToast()
@@ -153,8 +156,14 @@ export default function SubmitPage() {
           </Button>
         </Flex>
           :
-          <Flex justify="center" w="100%">
-            <Text color="white">Inscrições esgotadas</Text>
+          <Flex justify="center" w="100%" color="white">
+            <Text >
+              Inscrições esgotadas.
+              <Link href="#contato" textDecoration="underline" ml="1">
+                Precisa de suporte? Entre em contato
+              </Link>
+            </Text>
+
           </Flex>
         }
 
@@ -197,6 +206,9 @@ export default function SubmitPage() {
 
       </Section>
 
+      <Contact />
+
+      <Footer />
     </Flex>
 
   )
