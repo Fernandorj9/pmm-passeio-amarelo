@@ -12,6 +12,7 @@ const ChakraNextUnwrappedImage = chakra(NextImage, {
       "quality",
       "placeholder",
       "blurDataURL",
+      "priority",
       "loader ",
     ].includes(prop),
 });
@@ -42,7 +43,7 @@ const toBase64 = (str: string) =>
 
 export type ChakraNextImageProps = NextImageProps & BoxProps
 
-export const Image = ({ src, alt, width, quality, height, layout, placeholder, ...rest }: ChakraNextImageProps) => {
+export const Image = ({ src, alt, width, quality, height, layout, placeholder, priority, ...rest }: ChakraNextImageProps) => {
   return (
     <Box w="100%" overflow="hidden" align="center" justify="center" className="group" pos="relative" {...rest} >
       <ChakraNextUnwrappedImage
@@ -62,6 +63,7 @@ export const Image = ({ src, alt, width, quality, height, layout, placeholder, .
         transition="all 0.2s"
         position={rest.position}
         objectFit={rest.objectFit}
+        priority={priority}
         css={{
           width: '100%',
         }}
