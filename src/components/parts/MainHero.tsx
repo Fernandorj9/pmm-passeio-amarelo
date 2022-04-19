@@ -3,6 +3,9 @@ import { ReactNode } from "react";
 import { ButtonLink } from "../ButtonLink";
 import { Image } from "../Image";
 
+import yellowMayIcon from "../../../public/assets/banner-simbolo-maio-amarelo.webp"
+import logoImg from "../../../public/assets/logo-passeio-ciclistico.webp"
+
 type Props = {
   children: ReactNode,
 } & FlexProps;
@@ -36,7 +39,7 @@ export function MainHero({ children, ...rest }: Props) {
         {children}
 
         <Image
-          src="/assets/banner-simbolo-maio-amarelo.webp"
+          src={yellowMayIcon}
           alt="símbolo maio amarelo"
           w="975px"
           h="500px"
@@ -45,10 +48,11 @@ export function MainHero({ children, ...rest }: Props) {
           position="absolute"
           right="0"
           bottom="0"
+          priority
         />
 
         <Image
-          src="/assets/logo-passeio-ciclistico.webp"
+          src={logoImg}
           w="auto"
           maxW={["sm", "sm", "xs", "max-content"]}
           maxH={["48", "max-content", "max-content", "max-content"]}
@@ -57,6 +61,7 @@ export function MainHero({ children, ...rest }: Props) {
           objectFit="contain"
           right="0"
           bottom="0"
+          priority
         />
       </Container>
     </Flex>
