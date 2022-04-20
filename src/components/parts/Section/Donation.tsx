@@ -115,7 +115,9 @@ export function DonationSection() {
             </Text>
           </Flex>
         </Flex>
+
       </Flex>
+      <Text alignSelf="center" fontSize={["xl", "xl", "2xl"]} textAlign="center" fontFamily="heading">A entrega dos alimentos deve ser realizada no dia 28 de abril, entre 7h e 17h, na sede da SESDEM.</Text>
     </Section >
   )
 }
