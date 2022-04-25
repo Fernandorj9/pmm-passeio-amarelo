@@ -178,7 +178,7 @@ export default function SubmitPage() {
           px="4"
           py="6"
         >
-          <Text alignSelf="center" fontWeight="bold" mb="4">REGULAMENTO</Text>
+          <Text alignSelf="center" fontWeight="bold" mb="4">REGULAMENTO *retificado em 25/04/2022</Text>
 
           <Text mb="2">	O evento esportivo, PASSEIO CICLÍSTICO MAIO AMARELO 2022 doravante denominado  PASSEIO, será realizado na cidade de Mossoró com largada e chegada na rua Juvenal Lamartine, ao lado do antigo Fórum e poderão participar pessoas de ambos os sexos, regularmente inscritos de acordo com o REGULAMENTO OFICIAL do PASSEIO.</Text>
 
@@ -186,9 +186,9 @@ export default function SubmitPage() {
 
           <Text mb="2">	O PASSEIO será realizado no dia 01/05/2022 com concentração às 6h e largada as 6h30min.</Text>
 
-          <Text mb="2">	As inscrições serão realizadas somente pelo site: www.mossoro.rn.gov.br/passeiomaioamarelo tendo início no dia 18/04/2022 e término no dia 27/04/2022.</Text>
+          <Text mb="2">	As inscrições serão realizadas somente pelo site: https://passeiomaioamarelo.prefeiturademossoro.com.br/ tendo início no dia 18/04/2022 e término no dia 27/04/2022.</Text>
 
-          <Text mb="2">	A inscrição só será validada após doação de 2kg de alimento não perecível que devem ser entregues no dia 28/04 de 8h às 17h na SESDEM. Os alimentos arrecadados serão doados para a Instituições filantrópicas. O participante deverá apresentar no ato da doação um documento original com foto.</Text>
+          <Text mb="2">	A inscrição só será validada após doação de 2kg de alimento não perecível que devem ser entregues no dia 28/04 de 8h às 17h no Ginásio Municipal Pedro Ciarlini. Os alimentos arrecadados serão doados para a Instituições filantrópicas. O participante deverá apresentar no ato da doação um documento original com foto.</Text>
 
           <Text mb="2">	O participante devidamente inscrito receberá no dia da doação dos alimentos um camiseta alusiva ao evento juntamente com um passaporte (pulseira) que dará direito a receber uma medalha personalizada de metal no final do evento.</Text>
 

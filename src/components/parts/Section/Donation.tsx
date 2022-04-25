@@ -1,6 +1,7 @@
 import { Flex, Text, Divider, useBreakpointValue } from "@chakra-ui/react";
 import { Section } from "../../Section";
 import { Image } from "../../Image"
+import { Link } from "../../Link";
 
 export function DonationSection() {
   return (
@@ -117,7 +118,12 @@ export function DonationSection() {
         </Flex>
 
       </Flex>
-      <Text alignSelf="center" fontSize={["xl", "xl", "2xl"]} textAlign="center" fontFamily="heading">A entrega dos alimentos deve ser realizada no dia 28 de abril, entre 7h e 17h, na sede da SESDEM.</Text>
+      <Text alignSelf="center" fontSize={["xl", "xl", "2xl"]} textAlign="center" fontFamily="heading">
+        A entrega dos alimentos deve ser realizada no dia 28 de abril, entre 8h e 17h, no <Link href="https://goo.gl/maps/WMfnq5zoak8dUDjR7" textDecoration="underline">
+          Ginásio Municipal Pedro Ciarlini
+        </Link>
+        .
+      </Text>
     </Section >
   )
 }
