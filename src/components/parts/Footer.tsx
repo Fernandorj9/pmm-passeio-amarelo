@@ -16,7 +16,7 @@ export function Footer() {
         Prefeitura Municipal de Mossoró
       </Link>
       <Link
-        href="https://www.instagram.com/rellysondouglaas" isExternal
+        href="https://bit.ly/3k5X30q" isExternal
         color="gray.700">
         Developed by Rellyson Douglas
       </Link>
