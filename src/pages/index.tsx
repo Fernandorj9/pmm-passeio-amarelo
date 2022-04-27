@@ -27,7 +27,7 @@ export default function Home() {
 
           zIndex="2"
         >
-          Inscrições de <br />18 a 27 de abril
+          Entrega dos kits<br />dia 29 de 8h às 19h
         </Heading>
         <ButtonLink
           href={"/regulamento"}
