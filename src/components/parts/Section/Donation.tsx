@@ -119,7 +119,7 @@ export function DonationSection() {
 
       </Flex>
       <Text alignSelf="center" fontSize={["xl", "xl", "2xl"]} textAlign="center" fontFamily="heading">
-        A entrega dos alimentos deve ser realizada no dia 29 de abril, entre 8h e 19h, no <Link href="https://goo.gl/maps/WMfnq5zoak8dUDjR7" textDecoration="underline">
+        A entrega dos alimentos deve ser realizada no dia 29 de abril, entre 8h e 17h, no <Link href="https://goo.gl/maps/WMfnq5zoak8dUDjR7" textDecoration="underline">
           Ginásio Municipal Pedro Ciarlini
         </Link>
         .
